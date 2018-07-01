@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ScrollView, Animated, Platform, Easing, I18nManager, ViewPropTypes } from 'react-native';
 import shallowCompare from 'react-addons-shallow-compare';
 import _debounce from 'lodash.debounce';
@@ -117,7 +118,7 @@ export default class Carousel extends Component {
         /**
          * Style of each item's container
          */
-        slideStyle: Animated.View.propTypes.style,
+        slideStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
         /**
          * whether to implement a `shouldComponentUpdate`
          * strategy to minimize updates
